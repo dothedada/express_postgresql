@@ -1,0 +1,29 @@
+{
+    "name": "express_postgres",
+    "version": "1.0.0",
+    "main": "index.js",
+    "type": "module",
+    "prettier": {
+        "useTabs": false,
+        "tabWidth": 4,
+        "singleQuote": true
+    },
+    "scripts": {
+        "start_dev": "nodemon --watch index.js",
+        "start": "node index.js",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "description": "",
+    "dependencies": {
+        "dotenv": "^16.5.0",
+        "ejs": "^3.1.10",
+        "express": "^5.1.0",
+        "express-validator": "^7.2.1"
+    },
+    "devDependencies": {
+        "nodemon": "^3.1.9"
+    }
+}
