@@ -6,7 +6,14 @@
 	<title><%= title %></title>
 </head>
 <body>
-	<%= content %>
-	
+	<ul>
+		<% usernames.forEach((user) => { %>
+		<li>
+			<span><%= user.username %> - <%= user.id %></span>
+		</li>
+		<% }) %>
+	</ul>
+
+	<a href="/new">Agregar nuevo nombre</a>
 </body>
 </html>
