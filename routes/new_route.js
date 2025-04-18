@@ -1,13 +1,14 @@
 import { Router } from 'express';
+import { newUsername } from '../controllers/new_username.js';
 
 const newRouter = Router();
 
 newRouter.get('/', (req, res) => {
-    res.send('new users form will be logged here - wip');
+    res.render('form', { title: 'new', data: { action: '/new' } });
 });
 
-newRouter.post('/', (req, res) => {
-    res.send(`username to be saved: ${req.body.username}`);
+newRouter.post('/', newUsername, (req, res) => {
+    res.redirect('/');
 });
 
 export { newRouter };

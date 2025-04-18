@@ -9,7 +9,18 @@
 	<ul>
 		<% usernames.forEach((user) => { %>
 		<li>
-			<span><%= user.username %> - <%= user.id %></span>
+			<span><%= user.username %> - 
+				<form action="/<%= user.id %>/delete" method="get">
+					<button>
+						Borrar
+					</button>
+				</form>
+				<form action="/<%= user.id %>/update" method="get">
+					<button>
+						Cambiar nombre
+					</button>
+				</form>
+			</span>
 		</li>
 		<% }) %>
 	</ul>

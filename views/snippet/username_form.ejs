@@ -1,0 +1,11 @@
+<form action=<%= data.action %> method="post" >
+	<label>
+		<% if (data.action === '/new') { %>
+			Ingresa el nombre de quien quieres agregar
+			<% } else { %>
+			Inrgesa el nuevo nombre de <%= data.username || "" %>
+			<% } %>
+			<input type="text" name="name" min="2" max="200" value=<%= data.username || '' %> >
+	</label>
+	<button>Guardar</button>
+</form>
