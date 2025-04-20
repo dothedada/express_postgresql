@@ -1,8 +1,12 @@
-import { getAllUsernames } from '../db/queries.js';
+import { getAllUsernames, lookForUser } from '../db/queries.js';
 
 const getUsernames = async (req, res, next) => {
-    const usernames = await getAllUsernames();
-    res.usernames = usernames;
+    const { search } = req.query;
+    const users = await (search ? lookForUser(search) : getAllUsernames());
+
+    res.usernames = users;
+    res.search = search;
+
     next();
 };
 

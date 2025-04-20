@@ -6,12 +6,17 @@
 	<title><%= title %></title>
 </head>
 <body>
-	<form action="/search" method="get">
+	<form action="/" method="get">
 		<label>buscar
-			<input type="search" name="q" minlength="3">
+			<input type="search" name="search" minlength="3">
 		</label>
 		<button>Buscar</button>
 	</form>
+
+	<% if (search) { %>
+		<h2>resultados de búsqueda por <%= searchParam %></h2>
+	<% } %>
+
 	<ul>
 		<% usernames.forEach((user) => { %>
 		<li>
@@ -31,6 +36,11 @@
 		<% }) %>
 	</ul>
 
-	<a href="/new">Agregar nuevo nombre</a>
+	<% if (search) { %>
+		<a href="/">Mostrar todos los usuarios</a>
+	<% } else { %>
+		<a href="/new">Agregar nuevo nombre</a>
+	<% } %>
+
 </body>
 </html>
