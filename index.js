@@ -7,7 +7,6 @@ import { newRouter } from './routes/new_route.js';
 import { delRouter } from './routes/delete_route.js';
 import { updateRouter } from './routes/update_route.js';
 import { getId } from './middlewares/getID.js';
-import { searchRouter } from './routes/search_route.js';
 
 dotenv.config();
 
@@ -24,7 +23,6 @@ app.use('/', indexRouter);
 app.use('/new', newRouter);
 app.use('/:id/delete', getId, delRouter);
 app.use('/:id/update', getId, updateRouter);
-app.use('/search', searchRouter);
 
 app.listen(PORT, () => {
     console.log('ON AIR at port', PORT);

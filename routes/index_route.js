@@ -5,8 +5,12 @@ const indexRouter = Router();
 
 indexRouter.get('/', getUsernames, (req, res) => {
     res.render('index', {
-        title: 'WIP',
+        title: res.search
+            ? `búsqueda de usuarios por ${res.search}`
+            : 'usuarios',
         usernames: res.usernames,
+        searchParam: res.search,
+        search: !!res.search,
     });
 });
 
