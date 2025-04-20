@@ -6,6 +6,12 @@
 	<title><%= title %></title>
 </head>
 <body>
+	<form action="/search" method="get">
+		<label>buscar
+			<input type="search" name="q" minlength="3">
+		</label>
+		<button>Buscar</button>
+	</form>
 	<ul>
 		<% usernames.forEach((user) => { %>
 		<li>

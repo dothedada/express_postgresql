@@ -13,6 +13,14 @@ const getUser = async (id) => {
     return rows;
 };
 
+const lookForUser = async (str) => {
+    const { rows } = await newPool.query(
+        "SELECT * FROM usernames WHERE username LIKE CONCAT('%', $1::text, '%')",
+        [str],
+    );
+    return rows;
+};
+
 const insertUsername = async (username) => {
     await newPool.query('INSERT INTO usernames (username) VALUES ($1)', [
         username,
@@ -33,6 +41,7 @@ const putUsername = async (id, newName) => {
 export {
     getAllUsernames,
     getUser,
+    lookForUser,
     insertUsername,
     deleteUsername,
     putUsername,
